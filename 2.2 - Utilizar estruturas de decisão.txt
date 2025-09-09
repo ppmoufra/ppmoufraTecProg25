@@ -1,4 +1,4 @@
-1.2.  Mínimo de 2 (duas) opções por decisão-pergunta (texto pergunta);
+2.2.  Mínimo de 2 (duas) opções por decisão-pergunta (texto pergunta);
 
 
 (1) Você está na rede de IP. Três redes do pensamento são acessadas.
@@ -197,3 +197,4 @@ int main() {
     printf("Missão concluída.\n");
     return 0;
 }
+
