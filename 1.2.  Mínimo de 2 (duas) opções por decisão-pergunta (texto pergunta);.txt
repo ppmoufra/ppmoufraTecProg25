@@ -1,0 +1,181 @@
+1.2.	Mínimo de 2 (duas) opções por decisão/pergunta (texto pergunta);
+
+
+=== Viagem pela Rede de IP ===
+
+1) Voce esta na rede de IP. Tres redes do pensamento sao acessadas:
+1 - Rede da Logica
+2 - Rede da Imaginacao
+3 - Rede do Futuro
+Escolha: 
+
+
+____________________________________________________________________________
+_____________________________________________________________________________
+
+___________________________________________________________________________
+Cópiar para o Compilador, o código abaixo.!
+___________________________________________________________________________
+
+
+
+#include <stdio.h>
+
+int main() {
+    int escolha;
+
+    printf("=== Viagem pela Rede de IP ===\n\n");
+
+    // (1)
+    printf("1) Voce esta na rede de IP. Tres redes do pensamento sao acessadas:\n");
+    printf("1 - Rede da Logica\n");
+    printf("2 - Rede da Imaginacao\n");
+    printf("3 - Rede do Futuro\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (2)
+    printf("\n2) Voce visualiza um acesso de IP diferente de outra rede.\n");
+    printf("1 - Investigar esse acesso\n");
+    printf("2 - Ignorar e seguir seu caminho\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (3)
+    printf("\n3) Voce tem um sinal de bit e byte.\n");
+    printf("1 - Interpretar os dados recebidos\n");
+    printf("2 - Rejeitar o sinal por seguranca\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (4)
+    printf("\n4) Tecnologias avancadas aparecem no caminho.\n");
+    printf("1 - Testar a nova tecnologia\n");
+    printf("2 - Armazenar para analise futura\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (5)
+    printf("\n5) Voce visualiza e ouve um sinal de radio.\n");
+    printf("1 - Sintonizar o sinal\n");
+    printf("2 - Bloquear a frequencia\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (6)
+    printf("\n6) Voce ouve um Codigo Morse e outros sinais.\n");
+    printf("1 - Decifrar o codigo\n");
+    printf("2 - Ignorar e prosseguir\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (7)
+    printf("\n7) Outros tipos de visoes futuras aparecem.\n");
+    printf("1 - Aceitar a visao como guia\n");
+    printf("2 - Descartar como ilusao\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (8)
+    printf("\n8) Voce percebe tipos de audicao futuras.\n");
+    printf("1 - Ajustar sua frequencia auditiva\n");
+    printf("2 - Manter a audicao normal\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (9)
+    printf("\n9) Voce sente o paladar.\n");
+    printf("1 - Degustar para entender o sinal\n");
+    printf("2 - Rejeitar a sensacao\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (10)
+    printf("\n10) Voce faz usabilidade do tato.\n");
+    printf("1 - Explorar com as maos digitais\n");
+    printf("2 - Evitar contato\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (11)
+    printf("\n11) Voce faz usabilidade do sentido vestibular.\n");
+    printf("1 - Ajustar equilibrio espacial\n");
+    printf("2 - Desabilitar temporariamente\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (12)
+    printf("\n12) Voce usa tecnologia da propriocepcao.\n");
+    printf("1 - Expandir os limites corporais digitais\n");
+    printf("2 - Manter o padrao atual\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (13)
+    printf("\n13) Acontece uma tentativa de erro de rota.\n");
+    printf("1 - Recalcular automaticamente\n");
+    printf("2 - Forcar caminho manualmente\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (14)
+    printf("\n14) Alguem do planeta de origem pede feedback.\n");
+    printf("1 - Enviar relatorio detalhado\n");
+    printf("2 - Enviar resposta breve\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (15)
+    printf("\n15) Voce comeca a passar mal. O que faz?\n");
+    printf("1 - Ativar sistema de recuperacao\n");
+    printf("2 - Ignorar e continuar\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (16)
+    printf("\n16) Nas horas vagas, voce tenta fazer o que?\n");
+    printf("1 - Simular ambientes\n");
+    printf("2 - Criar novas conexoes\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (17)
+    printf("\n17) Tentativa de invasao no seu sistema operacional.\n");
+    printf("1 - Ativar firewall avancado\n");
+    printf("2 - Desviar rota imediatamente\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (18)
+    printf("\n18) Voce encontra um codigo que reage aos seus sentidos.\n");
+    printf("1 - Interagir com o codigo\n");
+    printf("2 - Armazenar para estudo\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (19)
+    printf("\n19) Voce precisa definir o protocolo de seguranca de IP.\n");
+    printf("1 - Criptografia maxima\n");
+    printf("2 - Acesso restrito\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (20)
+    printf("\n20) Voce chega ao destino programado (nucleo da rede). Ha tres caminhos:\n");
+    printf("1 - Caminho da Criacao\n");
+    printf("2 - Caminho da Destruicao\n");
+    printf("3 - Caminho da Neutralidade\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    // (21)
+    printf("\n21) Descoberta do IP desconhecido.\n");
+    printf("1 - Implementar a tecnologia no planeta de origem\n");
+    printf("2 - Deletar e apagar para sempre\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    printf("\n=== Fim da Jornada! ===\n");
+
+    return 0;
+}
