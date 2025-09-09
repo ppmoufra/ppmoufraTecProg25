@@ -1,5 +1,5 @@
 2.2.  Mínimo de 2 (duas) opções por decisão-pergunta (texto pergunta);
-
+2.2 - Utilizar estruturas de decisão
 
 (1) Você está na rede de IP. Três redes do pensamento são acessadas.
 Escolha: 1 - Acessar Rede A, 2 - Acessar Rede B, 3 - Acessar Rede C:
@@ -8,9 +8,6 @@ Escolha:
 ___________________________________________________________________________
 Cópiar para o Compilador, o código abaixo.!
 ___________________________________________________________________________
-
-
-2.2 - Utilizar estruturas de decisão
 
 
 /*
@@ -197,3 +194,4 @@ int main() {
     printf("Missão concluída.\n");
     return 0;
 }
+
