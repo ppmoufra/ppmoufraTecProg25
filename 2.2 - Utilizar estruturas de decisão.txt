@@ -1,0 +1,199 @@
+1.2.  Mínimo de 2 (duas) opções por decisão-pergunta (texto pergunta);
+
+
+(1) Você está na rede de IP. Três redes do pensamento são acessadas.
+Escolha: 1 - Acessar Rede A, 2 - Acessar Rede B, 3 - Acessar Rede C:
+Escolha: 
+
+___________________________________________________________________________
+Cópiar para o Compilador, o código abaixo.!
+___________________________________________________________________________
+
+
+2.2 - Utilizar estruturas de decisão
+
+
+/*
+  viajante_rede_ip.c (versão com estruturas de decisão)
+
+  Cada situação é controlada por estruturas de decisão (if/switch), simulando
+  escolhas possíveis do viajante e desbravador de segredos.
+
+  Compilar: gcc -o viajante_rede_ip viajante_rede_ip.c -std=c11
+  Executar: ./viajante_rede_ip
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void situacao1() {
+    int escolha;
+    printf("(1) Você está na rede de IP. Três redes do pensamento são acessadas.\n");
+    printf("Escolha: 1 - Acessar Rede A, 2 - Acessar Rede B, 3 - Acessar Rede C:\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+    if (escolha == 1) printf("Você acessou a Rede A.\n");
+    else if (escolha == 2) printf("Você acessou a Rede B.\n");
+    else if (escolha == 3) printf("Você acessou a Rede C.\n");
+    else printf("Rede desconhecida.\n");
+}
+
+void situacao2() {
+    printf("(2) Você visualiza um acesso de IP diferente de outra rede.\n");
+    int confiar = rand() % 2;
+    if (confiar)
+        printf("Você confia e acessa o IP remoto.\n");
+    else
+        printf("Você evita o acesso por segurança.\n");
+}
+
+void situacao3() {
+    printf("(3) Você tem um sinal de bit e byte.\n");
+    int bit = rand() % 2;
+    if (bit) printf("Sinal 1 detectado.\n");
+    else printf("Sinal 0 detectado.\n");
+}
+
+void situacao4() {
+    printf("(4) Tecnologias avançadas surgem diante de você.\n");
+    switch(rand() % 3) {
+        case 0: printf("Você encontrou quântica aplicada.\n"); break;
+        case 1: printf("Você encontrou hologramas interativos.\n"); break;
+        case 2: printf("Você encontrou IA autônoma.\n"); break;
+    }
+}
+
+void situacao5() {
+    printf("(5) Você visualiza e ouve um sinal de rádio.\n");
+    if (rand()%2) printf("O sinal é claro, transmite coordenadas.\n");
+    else printf("O sinal é distorcido, difícil de entender.\n");
+}
+
+void situacao6() {
+    printf("(6) Ouço um Código Morse e outros tipos.\n");
+    printf("Mensagem decodificada: SOS ou OK.\n");
+}
+
+void situacao7() {
+    printf("(7) Outros tipos de visão futuras aparecem.\n");
+    int tipo = rand()%2;
+    if (tipo==0) printf("Você vê o futuro tecnológico.\n");
+    else printf("Você vê riscos e ameaças futuras.\n");
+}
+
+void situacao8() {
+    printf("(8) Tipos de audição futuras.\n");
+    if (rand()%2) printf("Você ouve sinais além do humano.\n");
+    else printf("Você ouve padrões de máquinas.\n");
+}
+
+void situacao9() {
+    printf("(9) Você sente paladar digital.\n");
+    printf("Gosto metálico de dados.\n");
+}
+
+void situacao10() {
+    printf("(10) Você faz usabilidade do tato.\n");
+    printf("Texturas de pacotes sentidas.\n");
+}
+
+void situacao11() {
+    printf("(11) Você faz usabilidade do Sentido Vestibular.\n");
+    printf("Sensação de rotação em redes.\n");
+}
+
+void situacao12() {
+    printf("(12) Você usa tecnologia da Propriocepção.\n");
+    printf("Posição relativa detectada.\n");
+}
+
+void situacao13() {
+    printf("(13) Acontece uma tentativa de erro de rota.\n");
+    if (rand()%2) printf("Você corrige o trajeto.\n");
+    else printf("Você se perde na rota.\n");
+}
+
+void situacao14() {
+    printf("(14) Feedback do planeta de origem solicitado.\n");
+    printf("Você envia relatório parcial da missão.\n");
+}
+
+void situacao15() {
+    printf("(15) Início de passar mal.\n");
+    int acao;
+    printf("1-Pausar missão, 2-Continuar com risco: ");
+    scanf("%d", &acao);
+    if (acao==1) printf("Você pausa e recupera energia.\n");
+    else printf("Você continua debilitado.\n");
+}
+
+void situacao16() {
+    printf("(16) Nas horas vagas, você tenta fazer o que?\n");
+    switch(rand()%2) {
+        case 0: printf("Você estuda a rede.\n"); break;
+        case 1: printf("Você cria música com sinais.\n"); break;
+    }
+}
+
+void situacao17() {
+    printf("(17) Tentativa de invasão no seu sistema operacional.\n");
+    if (rand()%3==0) printf("Invasão bem-sucedida. Sistema comprometido.\n");
+    else printf("Ataque bloqueado. Sistema protegido.\n");
+}
+
+void situacao18() {
+    printf("(18) Encontra um código que reage aos seus sentidos.\n");
+    printf("Código responde ao tato e visão.\n");
+}
+
+void situacao19() {
+    printf("(19) Defina protocolo de segurança de IP.\n");
+    printf("Protocolo definido: autenticação e criptografia.\n");
+}
+
+void situacao20() {
+    printf("(20) Você chega ao destino programado. Há três caminhos.\n");
+    int caminho;
+    printf("Escolha caminho (1-3): ");
+    scanf("%d", &caminho);
+    if (caminho==1) printf("Caminho 1 leva a dados abertos.\n");
+    else if (caminho==2) printf("Caminho 2 leva a segredos ocultos.\n");
+    else if (caminho==3) printf("Caminho 3 leva a riscos perigosos.\n");
+    else printf("Caminho inválido.\n");
+}
+
+void situacao21() {
+    printf("(21) Descoberta do IP desconhecido. Realizar backups.\n");
+    for (int i=1;i<=3;i++) printf("Backup %d realizado.\n", i);
+    printf("Agora você decide: implementar no planeta de origem ou deletar.\n");
+}
+
+int main() {
+    srand(time(NULL));
+
+    situacao1();
+    situacao2();
+    situacao3();
+    situacao4();
+    situacao5();
+    situacao6();
+    situacao7();
+    situacao8();
+    situacao9();
+    situacao10();
+    situacao11();
+    situacao12();
+    situacao13();
+    situacao14();
+    situacao15();
+    situacao16();
+    situacao17();
+    situacao18();
+    situacao19();
+    situacao20();
+    situacao21();
+
+    printf("Missão concluída.\n");
+    return 0;
+}
