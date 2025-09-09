@@ -1,0 +1,306 @@
+1.1.Texto inicial para contextualizar o leitor sobre a história;
+
+
+=== Desbravador de Segredos — Versão Console ===
+Você é o Jogador 1, um desbravador que viaja pela rede de IPs usando tecnologia do pensamento e seus 7 sentidos.
+Antes de iniciar a travessia, configure o sistema e tome decisões críticas. Boa sorte!
+
+1) Escolha o método de inicialização:
+  A) Boot Seguro
+  B) Inicialização Rápida
+Escolha uma opção (A-B): 
+
+___________________________________________________________________________
+___________________________________________________________________________
+
+
+___________________________________________________________________________
+Cópiar para o Compilador, o código abaixo.!
+___________________________________________________________________________
+
+/*
+  Desbravador de Segredos - Jogo interativo em C
+  - Mínimo de 20 interações/decisões
+  - Cada decisão tem 2+ opções (A, B, C...)
+  - Modularizado: função ask_choice para reutilizar perguntas
+  - Leitura de entrada segura usando fgets
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define BUF_SIZE 128
+
+/* Lê uma linha e retorna primeiro caractere válido (letra) em minúsculas.
+   Retorna '\0' se entrada vazia. */
+char read_choice_char() {
+    char buf[BUF_SIZE];
+    if (!fgets(buf, sizeof(buf), stdin)) return '\0';
+    // encontrar primeiro caractere alfabético
+    for (int i = 0; buf[i] != '\0'; ++i) {
+        if (isalpha((unsigned char)buf[i])) {
+            return (char)tolower((unsigned char)buf[i]);
+        }
+    }
+    return '\0';
+}
+
+/* Pergunta reutilizável.
+   - question: string com texto da pergunta
+   - options: array de strings com opções (tamanho n_options)
+   - n_options: número de opções (>=2)
+   Retorna índice da opção escolhida (0..n_options-1)
+*/
+int ask_choice(const char *question, const char *options[], int n_options) {
+    if (n_options < 2) return 0;
+    while (1) {
+        printf("\n%s\n", question);
+        for (int i = 0; i < n_options; ++i) {
+            printf("  %c) %s\n", 'A' + i, options[i]);
+        }
+        printf("Escolha uma opção (A-%c): ", 'A' + n_options - 1);
+        char c = read_choice_char();
+        if (c >= 'a' && c < 'a' + n_options) {
+            int idx = (int)(c - 'a');
+            printf(">> Você escolheu: %c) %s\n", 'A' + idx, options[idx]);
+            return idx;
+        } else {
+            printf("Entrada inválida. Tente novamente.\n");
+        }
+    }
+}
+
+/* Mensagem breve de resultado imediato para cada escolha
+   Simples "sabor" narrativo para cada decisão */
+void outcome_short(int question_number, int choice_index) {
+    printf("--> Resultado imediato (Q%d): ", question_number);
+    switch (question_number) {
+        case 1:
+            if (choice_index == 0) printf("Boot seguro iniciado. Registro de integridade OK.\n");
+            else printf("Inicialização rápida escolhida. Alguns módulos serão carregados sob demanda.\n");
+            break;
+        case 2:
+            if (choice_index == 0) printf("Gerenciamento automático ativado — o sistema otimiza por você.\n");
+            else printf("Modo manual: você terá controle total sobre processos mentais.\n");
+            break;
+        case 3:
+            if (choice_index == 0) printf("AES aplicado — conexão robusta estabelecida.\n");
+            else printf("Criptografia leve: conexão mais veloz, risco aumentado.\n");
+            break;
+        case 4:
+            if (choice_index == 0) printf("Visão do código oculto ativada — linhas invisíveis aparecem.\n");
+            else printf("Audição ligada — padrões sonoros decodificados como instruções.\n");
+            break;
+        case 5:
+            if (choice_index == 0) printf("TCP: canal confiável. Latência maior, segurança alta.\n");
+            else printf("UDP: você acelera pela rede — pacotes podem se perder.\n");
+            break;
+        case 6:
+            if (choice_index == 0) printf("Firewall Mental levantado — escudo ativo.\n");
+            else printf("Camuflagem de pacotes: você se mistura ao tráfego.\n");
+            break;
+        case 7:
+            if (choice_index == 0) printf("Segue a origem do cheiro metálico — descoberta próxima.\n");
+            else printf("Ignora e segue: foco na missão principal.\n");
+            break;
+        case 8:
+            if (choice_index == 0) printf("Força a entrada — risco de dano à interface.\n");
+            else printf("Recuando agora — procura caminhos alternativos.\n");
+            break;
+        case 9:
+            if (choice_index == 0) printf("Backup iniciado — copia de segurança criada.\n");
+            else printf("Explora direto — resposta rápida, sem cópia.\n");
+            break;
+        case 10:
+            if (choice_index == 0) printf("Recalibração automática executada.\n");
+            else printf("Você calibra manualmente — ajuste fino bem-sucedido.\n");
+            break;
+        case 11:
+            if (choice_index == 0) printf("Entrando na Realidade Virtual Científica — leis previsíveis.\n");
+            else printf("Avança para a Realidade Futurista — regras estranhas.\n");
+            break;
+        case 12:
+            if (choice_index == 0) printf("Seguindo o instinto: respostas rápidas, menos previsíveis.\n");
+            else printf("Lógica matemática aplicada: precisão, pode perder intuição.\n");
+            break;
+        case 13:
+            if (choice_index == 0) printf("Chave pública mostrada — autenticidade comprovada.\n");
+            else printf("Demonstração em código: o guardião testa sua habilidade.\n");
+            break;
+        case 14:
+            if (choice_index == 0) printf("Acesso temporário concedido — limites impostos.\n");
+            else printf("Acesso permanente aceito — responsabilidade aumentada.\n");
+            break;
+        case 15:
+            if (choice_index == 0) printf("Backup da tecnologia feito — material para estudo.\n");
+            else printf("Deleta para proteger a origem — segurança priorizada.\n");
+            break;
+        case 16:
+            if (choice_index == 0) printf("Aceita ver o futuro — imagens perturbadoras surgem.\n");
+            else printf("Recusa: mantém o estado atual sem riscos futuros.\n");
+            break;
+        case 17:
+            if (choice_index == 0) printf("Rede Estável: rotina conhecida.\n");
+            else if (choice_index == 1) printf("Rede Experimental: oportunidades e riscos.\n");
+            else printf("Rede Misteriosa: incógnitas profundas.\n");
+            break;
+        case 18:
+            if (choice_index == 0) printf("Antivírus corrige o pacote corrompido.\n");
+            else printf("Pacote isolado em quarentena — seguro, porém lento.\n");
+            break;
+        case 19:
+            if (choice_index == 0) printf("Compartilha: informação flui para sua origem.\n");
+            else printf("Guarda para si: conhecimento preservado para você.\n");
+            break;
+        case 20:
+            if (choice_index == 0) printf("Jornada encerrada — você retorna ao ponto de origem.\n");
+            else printf("Reiniciar: nova rota será escolhida em breve.\n");
+            break;
+        default:
+            printf("Decisão tomada.\n");
+    }
+}
+
+/* Programa principal: aplica 20 perguntas conforme o fluxo */
+int main() {
+    printf("=== Desbravador de Segredos — Versão Console ===\n");
+    printf("Você é o Jogador 1, um desbravador que viaja pela rede de IPs usando tecnologia do pensamento e seus 7 sentidos.\n");
+    printf("Antes de iniciar a travessia, configure o sistema e tome decisões críticas. Boa sorte!\n");
+
+    int stability = 50; // variável que mede "estabilidade do sistema" (0-100)
+    int knowledge = 0;  // quantos segredos/infos você acumulou
+    int choices[21];    // armazenar escolhas (1..20) como índices (0..n-1)
+
+    /* Perguntas baseadas no fluxo que você pediu (20 interações) */
+    const char *q1_opts[] = {"Boot Seguro", "Inicialização Rápida"};
+    choices[1] = ask_choice("1) Escolha o método de inicialização:", q1_opts, 2);
+    outcome_short(1, choices[1]);
+    stability += (choices[1] == 0) ? 10 : -5;
+
+    const char *q2_opts[] = {"Automático (sistema decide)", "Manual (você controla)"};
+    choices[2] = ask_choice("2) Como gerenciar os processos do pensamento?", q2_opts, 2);
+    outcome_short(2, choices[2]);
+    stability += (choices[2] == 0) ? 5 : 0;
+
+    const char *q3_opts[] = {"AES avançado", "Criptografia leve e rápida"};
+    choices[3] = ask_choice("3) Escolha o tipo de criptografia para autenticação:", q3_opts, 2);
+    outcome_short(3, choices[3]);
+    stability += (choices[3] == 0) ? 8 : -3;
+
+    const char *q4_opts[] = {"Visão — ler padrões ocultos", "Audição — decifrar frequências"};
+    choices[4] = ask_choice("4) Qual sentido especial ativa para validar acesso?", q4_opts, 2);
+    outcome_short(4, choices[4]);
+    knowledge += (choices[4] == 0) ? 1 : 1;
+
+    const char *q5_opts[] = {"TCP — seguro e confiável", "UDP — veloz, mas arriscado"};
+    choices[5] = ask_choice("5) Escolha o protocolo de viagem para atravessar o portal:", q5_opts, 2);
+    outcome_short(5, choices[5]);
+    stability += (choices[5] == 0) ? 5 : -7;
+
+    const char *q6_opts[] = {"Firewall Mental", "Camuflagem de Pacotes"};
+    choices[6] = ask_choice("6) Rede hostil detectada — qual defesa usar?", q6_opts, 2);
+    outcome_short(6, choices[6]);
+    stability += (choices[6] == 0) ? 7 : 3;
+
+    const char *q7_opts[] = {"Investigar cheiro metálico (Olfato)", "Ignorar e seguir"};
+    choices[7] = ask_choice("7) Sentiu cheiro metálico — o que faz?", q7_opts, 2);
+    outcome_short(7, choices[7]);
+    knowledge += (choices[7] == 0) ? 2 : 0;
+
+    const char *q8_opts[] = {"Forçar a entrada (Tato)", "Recuar e procurar outro caminho"};
+    choices[8] = ask_choice("8) Interface antiga oferece resistência — como procede?", q8_opts, 2);
+    outcome_short(8, choices[8]);
+    stability += (choices[8] == 0) ? -5 : 4;
+
+    const char *q9_opts[] = {"Fazer backup dos dados", "Explorar diretamente sem backup"};
+    choices[9] = ask_choice("9) Servidor desconhecido encontrado — acessar?", q9_opts, 2);
+    outcome_short(9, choices[9]);
+    knowledge += (choices[9] == 0) ? 3 : 1;
+
+    const char *q10_opts[] = {"Recalibrar automaticamente (Vestibular)", "Ajustar manualmente"};
+    choices[10] = ask_choice("10) Ajuste de equilíbrio detectado — como responde?", q10_opts, 2);
+    outcome_short(10, choices[10]);
+    stability += (choices[10] == 0) ? 3 : 2;
+
+    const char *q11_opts[] = {"Realidade Virtual Científica", "Realidade Futurista Desconhecida"};
+    choices[11] = ask_choice("11) Nó da rede: qual realidade seguir?", q11_opts, 2);
+    outcome_short(11, choices[11]);
+    knowledge += (choices[11] == 1) ? 2 : 1;
+
+    const char *q12_opts[] = {"Seguir o instinto (Propriocepção)", "Seguir a lógica matemática"};
+    choices[12] = ask_choice("12) Desafio de propriocepção — instinto ou lógica?", q12_opts, 2);
+    outcome_short(12, choices[12]);
+    stability += (choices[12] == 1) ? 2 : 0;
+
+    const char *q13_opts[] = {"Mostrar chave pública", "Demonstrar conhecimento em código"};
+    choices[13] = ask_choice("13) Guardião digital pede autenticação — qual prova usar?", q13_opts, 2);
+    outcome_short(13, choices[13]);
+    knowledge += (choices[13] == 1) ? 2 : 1;
+
+    const char *q14_opts[] = {"Acesso temporário", "Acesso permanente"};
+    choices[14] = ask_choice("14) Guardião: deseja acesso temporário ou permanente?", q14_opts, 2);
+    outcome_short(14, choices[14]);
+    stability += (choices[14] == 1) ? -4 : 2;
+
+    const char *q15_opts[] = {"Fazer backup para estudo posterior", "Deletar e proteger sua origem"};
+    choices[15] = ask_choice("15) Nova tecnologia descoberta — o que faz?", q15_opts, 2);
+    outcome_short(15, choices[15]);
+    knowledge += (choices[15] == 0) ? 3 : 0;
+
+    const char *q16_opts[] = {"Aceitar ver o futuro (Visão expandida)", "Recusar para evitar riscos"};
+    choices[16] = ask_choice("16) Tecnologia oferece visão do futuro — aceitar?", q16_opts, 2);
+    outcome_short(16, choices[16]);
+    stability += (choices[16] == 0) ? -3 : 1;
+    knowledge += (choices[16] == 0) ? 2 : 0;
+
+    const char *q17_opts[] = {"Rede Estável", "Rede Experimental", "Rede Misteriosa"};
+    choices[17] = ask_choice("17) Três caminhos paralelos encontrados — qual escolher?", q17_opts, 3);
+    outcome_short(17, choices[17]);
+    if (choices[17] == 0) stability += 3;
+    else if (choices[17] == 1) stability -= 2, knowledge += 2;
+    else stability -= 5, knowledge += 3;
+
+    const char *q18_opts[] = {"Corrigir com antivírus", "Isolar em quarentena"};
+    choices[18] = ask_choice("18) Pacote corrompido invade seu sistema — ação?", q18_opts, 2);
+    outcome_short(18, choices[18]);
+    stability += (choices[18] == 0) ? 4 : 1;
+
+    const char *q19_opts[] = {"Compartilhar os segredos com sua origem", "Guardar o conhecimento apenas para si"};
+    choices[19] = ask_choice("19) Núcleo da rede pede sua escolha final sobre os segredos:", q19_opts, 2);
+    outcome_short(19, choices[19]);
+    if (choices[19] == 0) knowledge += 2;
+    else knowledge += 1, stability += 2;
+
+    const char *q20_opts[] = {"Encerrar a jornada", "Reiniciar em outro caminho"};
+    choices[20] = ask_choice("20) Deseja encerrar a jornada ou reiniciar em outro caminho?", q20_opts, 2);
+    outcome_short(20, choices[20]);
+
+    /* Pequena lógica final: sumarizar o estado do jogador */
+    if (stability > 100) stability = 100;
+    if (stability < 0) stability = 0;
+
+    printf("\n=== Resumo da Jornada ===\n");
+    printf("Estabilidade do Sistema: %d/100\n", stability);
+    printf("Conhecimento/Segredos acumulados: %d\n", knowledge);
+
+    printf("\nDecisões tomadas (resumo rápido):\n");
+    for (int i = 1; i <= 20; ++i) {
+        printf(" Q%2d: %c\n", i, 'A' + choices[i]);
+    }
+
+    /* Pequenas consequências baseadas nas escolhas-chave */
+    printf("\nConsequência final: ");
+    if (knowledge >= 12 && stability >= 40) {
+        printf("Você retornou com muitos segredos úteis e um sistema estável — pronto para aplicar conhecimento.\n");
+    } else if (knowledge >= 12) {
+        printf("Você acumulou segredos valiosos, mas o sistema ficou instável — cuidado ao aplicar as descobertas.\n");
+    } else if (stability >= 60) {
+        printf("Sistema muito estável, porém pouco conhecimento novo foi adquirido. Missão conservadora bem-sucedida.\n");
+    } else {
+        printf("Missão arriscada: poucos ganhos e estabilidade baixa. Aprenda com essa travessia.\n");
+    }
+
+    printf("\nObrigado por jogar — Desbravador. Até a próxima travessia.\n");
+    return 0;
+}
