@@ -266,4 +266,5 @@ void situacao21() {
     printf("Você faz três backups para estudo científico.\n");
     printf("=== MISSÃO CONCLUÍDA ===\n");
     exit(0);
+
 }
