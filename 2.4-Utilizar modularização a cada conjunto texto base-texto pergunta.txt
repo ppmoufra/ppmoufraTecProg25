@@ -1,0 +1,270 @@
+
+2.4-Utilizar modularização a cada conjunto texto base/texto pergunta;
+
+
+=== Jornada do Viajante das Redes de IP ===
+
+(1) Você está na rede de IP. Três redes do pensamento são acessadas.
+1 - Explorar a primeira rede
+2 - Explorar a segunda rede
+
+Digite sua escolha: 
+
+
+__________________________________________________________________________
+Cópiar para o Compilador, o código abaixo.!
+__________________________________________________________________________
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// ====================== PROTÓTIPOS ======================
+void situacao1();
+void situacao2();
+void situacao3();
+void situacao4();
+void situacao5();
+void situacao6();
+void situacao7();
+void situacao8();
+void situacao9();
+void situacao10();
+void situacao11();
+void situacao12();
+void situacao13();
+void situacao14();
+void situacao15();
+void situacao16();
+void situacao17();
+void situacao18();
+void situacao19();
+void situacao20();
+void situacao21();
+
+// ====================== FUNÇÃO AUXILIAR ======================
+int escolha() {
+    int op;
+    printf("\nDigite sua escolha: ");
+    scanf("%d", &op);
+    return op;
+}
+
+// ====================== MAIN ======================
+int main() {
+    printf("=== Jornada do Viajante das Redes de IP ===\n");
+    situacao1();
+    return 0;
+}
+
+// ====================== SITUAÇÕES ======================
+
+// (1) Rede de IP
+void situacao1() {
+    printf("\n(1) Você está na rede de IP. Três redes do pensamento são acessadas.\n");
+    printf("1 - Explorar a primeira rede\n2 - Explorar a segunda rede\n");
+
+    int op = escolha();
+    if(op == 1) situacao2();
+    else situacao3();
+}
+
+// (2) Acesso de IP diferente
+void situacao2() {
+    printf("\n(2) Você visualiza um acesso de IP diferente de outra rede.\n");
+    printf("1 - Seguir esse IP misterioso\n2 - Ignorar e continuar\n");
+
+    int op = escolha();
+    if(op == 1) situacao4();
+    else situacao5();
+}
+
+// (3) Sinal de bit e byte
+void situacao3() {
+    printf("\n(3) Você tem um sinal de bit e byte.\n");
+    printf("1 - Decifrar o sinal\n2 - Armazenar para estudo posterior\n");
+
+    int op = escolha();
+    if(op == 1) situacao6();
+    else situacao7();
+}
+
+// (4) Tecnologias avançadas
+void situacao4() {
+    printf("\n(4) Tecnologias avançadas.\n");
+    printf("1 - Usar para aumentar sentidos\n2 - Registrar para estudo\n");
+
+    int op = escolha();
+    if(op == 1) situacao8();
+    else situacao9();
+}
+
+// (5) Sinal de rádio
+void situacao5() {
+    printf("\n(5) Você visualiza e ouve um sinal de rádio.\n");
+    printf("1 - Traduzir o sinal\n2 - Ignorar e avançar\n");
+
+    int op = escolha();
+    if(op == 1) situacao10();
+    else situacao11();
+}
+
+// (6) Código Morse e outros tipos
+void situacao6() {
+    printf("\n(6) Você ouve Código Morse e outros tipos.\n");
+    printf("1 - Decifrar mensagem\n2 - Registrar para análise posterior\n");
+
+    int op = escolha();
+    if(op == 1) situacao12();
+    else situacao13();
+}
+
+// (7) Outros tipos de visão futuras
+void situacao7() {
+    printf("\n(7) Outros tipos de visão futuras.\n");
+    printf("1 - Ativar visão futurista\n2 - Ignorar visão futurista\n");
+
+    int op = escolha();
+    if(op == 1) situacao14();
+    else situacao15();
+}
+
+// (8) Tipos de audição futuras
+void situacao8() {
+    printf("\n(8) Tipos de audição futuras.\n");
+    printf("1 - Focar em sons do futuro\n2 - Focar em sons atuais\n");
+
+    int op = escolha();
+    if(op == 1) situacao16();
+    else situacao17();
+}
+
+// (9) Paladar
+void situacao9() {
+    printf("\n(9) Você sente paladar.\n");
+    printf("1 - Analisar sabores desconhecidos\n2 - Ignorar sabores\n");
+
+    int op = escolha();
+    if(op == 1) situacao18();
+    else situacao19();
+}
+
+// (10) Tato
+void situacao10() {
+    printf("\n(10) Você faz usabilidade do tato.\n");
+    printf("1 - Explorar texturas\n2 - Evitar tocar\n");
+
+    int op = escolha();
+    if(op == 1) situacao20();
+    else situacao21();
+}
+
+// (11) Sentido Vestibular
+void situacao11() {
+    printf("\n(11) Você faz usabilidade do Sentido Vestibular.\n");
+    printf("1 - Testar equilíbrio\n2 - Ignorar sensação\n");
+
+    int op = escolha();
+    if(op == 1) situacao20();
+    else situacao21();
+}
+
+// (12) Propriocepção
+void situacao12() {
+    printf("\n(12) Você usa tecnologia da Propriocepção.\n");
+    printf("1 - Ajustar movimentos\n2 - Observar ambiente\n");
+
+    int op = escolha();
+    if(op == 1) situacao19();
+    else situacao18();
+}
+
+// (13) Erro de rota
+void situacao13() {
+    printf("\n(13) Acontece uma tentativa de erro de rota (destino).\n");
+    printf("1 - Corrigir rota\n2 - Tentar rota alternativa\n");
+
+    int op = escolha();
+    if(op == 1) situacao14();
+    else situacao15();
+}
+
+// (14) Feedback
+void situacao14() {
+    printf("\n(14) Alguém do planeta de origem pede o feedback da viagem.\n");
+    printf("1 - Enviar feedback\n2 - Ignorar e continuar\n");
+
+    int op = escolha();
+    if(op == 1) situacao16();
+    else situacao17();
+}
+
+// (15) Passar mal
+void situacao15() {
+    printf("\n(15) Você começa a passar mal.\n");
+    printf("1 - Descansar\n2 - Continuar viagem\n");
+
+    int op = escolha();
+    if(op == 1) situacao18();
+    else situacao19();
+}
+
+// (16) Horas vagas
+void situacao16() {
+    printf("\n(16) Nas horas vagas, você tenta fazer o quê?\n");
+    printf("1 - Estudar a rede\n2 - Relaxar\n");
+
+    int op = escolha();
+    if(op == 1) situacao20();
+    else situacao21();
+}
+
+// (17) Tentativa de invasão
+void situacao17() {
+    printf("\n(17) Tentativa de invasão no seu sistema operacional.\n");
+    printf("1 - Bloquear invasão\n2 - Ignorar e continuar\n");
+
+    int op = escolha();
+    if(op == 1) situacao18();
+    else situacao19();
+}
+
+// (18) Código que reage aos sentidos
+void situacao18() {
+    printf("\n(18) Você encontra um código que reage aos seus sentidos.\n");
+    printf("1 - Interagir com o código\n2 - Ignorar\n");
+
+    int op = escolha();
+    if(op == 1) situacao20();
+    else situacao21();
+}
+
+// (19) Protocolo de segurança
+void situacao19() {
+    printf("\n(19) Você precisa definir o protocolo de segurança de IP.\n");
+    printf("1 - Definir protocolo padrão\n2 - Criar protocolo avançado\n");
+
+    int op = escolha();
+    if(op == 1) situacao20();
+    else situacao21();
+}
+
+// (20) Núcleo da rede
+void situacao20() {
+    printf("\n(20) Você chega ao destino programado (núcleo da rede).\n");
+    printf("1 - Explorar caminho A\n2 - Explorar caminho B\n");
+
+    int op = escolha();
+    if(op == 1) situacao21();
+    else situacao21();
+}
+
+// (21) Descoberta final
+void situacao21() {
+    printf("\n(21) Descoberta do IP desconhecido!\n");
+    printf("Você faz três backups para estudo científico.\n");
+    printf("=== MISSÃO CONCLUÍDA ===\n");
+    exit(0);
+
+}
